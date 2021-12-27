@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-  margin-top: 500px;
+  margin-top: 600px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -44,7 +44,7 @@ body {
   
 }
 h3 {
-  margin-top: 50px;
+  margin-top: 30px;
   width: 50%;
 }
 .curator {
@@ -54,9 +54,56 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  margin-top: 20px;
+  margin-top: 50px;
   position: fixed;
 }
 .other {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.images {
+  border-radius: 50%;
+} 
+.text {
+  width: 650px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 20px 0 20px 0;
+}
+.name {
+  opacity: .7;
+  margin-top: 20px;
+  font-size: 24px;
+}
+.ops {
+  animation: loading 1s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.none {
+  display: none;
+}
+.rel {
+  position: relative;
+}
+.apply {
+  margin-top: 300px;
+  width: 350px;
+  height: 350px;
+  margin-left: 400px;
+  
+}
+.artist {
+  height: 100vh;
+  background: #000;
 }

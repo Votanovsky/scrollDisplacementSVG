@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .content {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+} */
+/* img {
+    width: 150px;
+    height:150px;
+} */
+.img {
+    position: absolute;
+    width: 300px;
+}
+.creators_svg {
+    width: 400px;
+}

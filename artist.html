@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="two.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div style="height: 100vh;"></div>
+    <div>
+        <div class="flex justify-center flex-col artist-wrapper overflow-hidden">
+            <img class="w-1/4 mx-auto" src="creators.svg" alt="">
+            <div class="h-24 w-full opacity-30 bg-white"></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-4 px-10 ">
+                <img style="width: 150px;" class="w-32 mr-14 img" src="aqua_drop.png" alt="">
+                <img style="width: 200px;" class="mt-12 img" src="ARCHI.png" alt="">
+                <img style="width: 200px;" class="img" src="arjintai_drop.png" alt="">
+                <img style="width: 300px;" class="mt-12 img" src="BAL_DROP.png" alt="">
+                <img style="width: 200px;" class="w-32 mr-14 img" src="doroboneko_drop.png" alt="">
+                <img style="width: 150px;" class="w-32 img" src="elia_drop.png" alt="">
+                <img style="width: 300px;" class="w-32 pl-1 img" src="elvogto_drop.png" alt="">
+                <img style="width: 250px;" class="mr-7  img" src="JOPUC_drop.png" alt="">
+                <img style="width: 250px;" class="w-32 pt-7 img" src="labeks_drop.png" alt="">
+                <img style="width: 200px;" class="w-32 pb-7 img" src="lucamaden_drop.png" alt="">
+                <img style="width: 150px;" class="w-32 mb-14 img" src="mt_drop.png" alt="">
+                <img style="width: 200px;" class="w-32 pl-7 img" src="nik_drop.png" alt="">
+                <img style="width: 200px;" class=" img" src="sarah_drop.png" alt="">
+                <img style="width: 300px;" class=" img" src="stw_drop.png" alt="">
+                <img style="width: 150px;" class="img" src="Wenpanghsiang_drop.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+    <!-- <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let tl = gsap.timeline({
+            // scrollTrigger: {
+            //     trigger: '.content',
+            //     // start: "bot center",
+            //     // markers: true
+            // }
+        });
+
+        const creatorsBlock = document.getElementsByClassName('content')[0]
+        const creators = Array.from(document.getElementsByClassName('img'))
+
+        const start = {
+            x: window.innerWidth * .5,
+            y: creatorsBlock.scrollHeight * .5
+        }
+        creators.forEach((creator, index) => {        
+            const phi = Math.PI * index / creators.length
+
+            creator.style.left = (
+                start.x * (1 + Math.cos(phi) * 1.5) - index * 100
+            ) + 'px'
+
+            creator.style.top = (
+                start.y * Math.sin(phi) + index * 40
+            ) + 'px'
+
+
+            // ПОПЫТКА КОНТРОЛЯ ВЫХОДА ЗА ГРАНИЦЫ
+            
+            // let animation1 = {x: 0, y: 0}
+            // animation1.x = creator.style.left.split('px')[0] * .6 
+            // + start.x * (1 - Math.cos(index - phi * .1) > window.innerWidth ? 
+            
+
+            console.log(creator.style.top, creator.style.left)
+            switch(index % 3)
+            {
+                case 0:
+                    tl.to(creator, {
+                        x: -creator.style.left.split('px')[0] * .4 + start.x * (1 - Math.cos(index - phi * .1)),
+                        y: -creator.style.top.split('px')[0] * .5 + start.y * .5 * Math.sin(phi) + index * 20,
+                        duration: 2
+                    },1)
+                    break
+                case 1:
+                    tl.to(creator, {
+                        x: -creator.style.left.split('px')[0] * Math.sin(phi),
+                        y: -creator.style.top.split('px')[0] * .3,
+                        duration: 2
+                    },1)
+                    break
+                case 2:
+                    tl.to(creator, {
+                        x: -creator.style.left.split('px')[0] * .4,
+                        y: -creator.style.left.split('px')[0] * .3,
+                        duration: 2
+                    },1)
+                    break
+            }
+        })
+        tl.pause()
+        
+        window.addEventListener('scroll', function() {
+            if(creatorsBlock.getBoundingClientRect().top <= 0)
+                tl.resume()
+            // else
+            //     tl.reverse()
+        })
+
+        window.onbeforeunload = () => {scrollTo({top: 0, behavior: 'instant'})}
+    </script>  -->
+
+
+    <script>
+        const content = document.getElementsByClassName("artist-wrapper")[0]
+        const imgs = Array.from(document.getElementsByClassName('img'))
+
+
+        imgs.forEach((img, index) => {
+            gsap.from(img, {
+                scrollTrigger: {
+                    trigger: '.content',
+                    start: 'top center',
+                },
+                x: (index % 2 ? 1.05 : -.05) * window.innerWidth * Math.sin(index),
+                y: (index % 2 ? -.15 : 1.05) * content.scrollHeight * Math.sin(index),
+                duration: 4
+            })
+            img.addEventListener('click', (event) => {
+                //console.log(event.target.src)
+                let basename = event.target.src.split('.')
+                basename.splice(basename.length - 1, 1)
+                basename = basename.join('.')
+                basename = basename.split(`${window.origin}/`)[1]
+                event.target.src = basename + ".gif"
+
+                setTimeout(() => {
+                    event.target.style.opacity = 0
+                }, 2000)
+            })
+        })
+    </script>
+</body>
+</html>

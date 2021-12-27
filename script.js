@@ -56,3 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //   if(scrollTop / document.)
 // })
+
+const curator = document.querySelector('.curator')
+
+document.addEventListener('scroll', (e)=> {
+  e = document.querySelector('.curator')
+  e.classList.add('ops')
+  setTimeout(() => {
+    e.classList.add('none')
+  }, 1000);
+  
+})
