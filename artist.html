@@ -9,27 +9,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div style="height: 100vh;"></div>
+
+
+
+
+    <style>
+        .apply_button {
+        width: 260px;
+        height: 260px;
+        -webkit-filter: url(#filter);
+                filter: url(#filter);
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: 200px;
+        margin-top: 200px;
+        }
+    </style>
+    <!-- <div style="height: 150vh;">
+        <div class="center">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="filter center">
+              <filter id="filter">
+                <feTurbulence 
+           OCTAVES='2'
+           baseFrequency="0.025 0.005" stitchTiles="stitch" type="fractalNoise" result="glitch" id="turbulence"/>
+                <feDisplacementMap in="SourceGraphic" in2="glitch" scale="0" id="displacement"/>
+              </filter>
+            </svg>
+            <img class="apply_button" src="apply.png" alt="">
+        </div>
+    </div> -->
     <div>
-        <div class="flex justify-center flex-col artist-wrapper overflow-hidden">
-            <img class="w-1/4 mx-auto" src="creators.svg" alt="">
+        <div class="flex justify-center flex-col artist-wrapper overflow-hidden content">
+            <img style="width: 400px;" class="mx-auto" src="creators.svg" alt="">
             <div class="h-24 w-full opacity-30 bg-white"></div>
             <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-4 px-10 ">
-                <img style="width: 150px;" class="w-32 mr-14 img" src="aqua_drop.png" alt="">
-                <img style="width: 200px;" class="mt-12 img" src="ARCHI.png" alt="">
-                <img style="width: 200px;" class="img" src="arjintai_drop.png" alt="">
-                <img style="width: 300px;" class="mt-12 img" src="BAL_DROP.png" alt="">
-                <img style="width: 200px;" class="w-32 mr-14 img" src="doroboneko_drop.png" alt="">
-                <img style="width: 150px;" class="w-32 img" src="elia_drop.png" alt="">
-                <img style="width: 300px;" class="w-32 pl-1 img" src="elvogto_drop.png" alt="">
-                <img style="width: 250px;" class="mr-7  img" src="JOPUC_drop.png" alt="">
-                <img style="width: 250px;" class="w-32 pt-7 img" src="labeks_drop.png" alt="">
-                <img style="width: 200px;" class="w-32 pb-7 img" src="lucamaden_drop.png" alt="">
-                <img style="width: 150px;" class="w-32 mb-14 img" src="mt_drop.png" alt="">
-                <img style="width: 200px;" class="w-32 pl-7 img" src="nik_drop.png" alt="">
-                <img style="width: 200px;" class=" img" src="sarah_drop.png" alt="">
-                <img style="width: 300px;" class=" img" src="stw_drop.png" alt="">
-                <img style="width: 150px;" class="img" src="Wenpanghsiang_drop.png" alt="">
+                <img style="width: 250px; margin-top: 30px;" class="img" src="aqua_drop.png" alt="">
+                <img style="width: 280px;" class="img" src="ARCHI.png" alt="">
+                <img style="width: 320px; margin-top: 30px;" class="img" src="arjintai_drop.png" alt="">
+                <img style="width: 320px;" class="img" src="BAL_DROP.png" alt="">
+                <img style="width: 200px; margin-top: 30px;" class="img" src="doroboneko_drop.png" alt="">
+                <img style="width: 350px;" class="img" src="elia_drop.png" alt="">
+                <img style="width: 310px; margin-top: 30px;" class="img" src="elvogto_drop.png" alt="">
+                <img style="width: 280px;" class="img" src="JOPUC_drop.png" alt="">
+                <img style="width: 350px; margin-top: 30px;" class="img" src="labeks_drop.png" alt="">
+                <img style="width: 280px;" class="img" src="lucamaden_drop.png" alt="">
+                <img style="width: 350px; margin-top: 30px;" class="img" src="mt_drop.png" alt="">
+                <img style="width: 290px;" class="img" src="nik_drop.png" alt="">
+                <img style="width: 290px; margin-top: 30px;" class="img" src="sarah_drop.png" alt="">
+                <img style="width: 300px;" class="img" src="stw_drop.png" alt="">
+                <img style="width: 360px; margin-top: 30px;" class="img" src="Wenpanghsiang_drop.png" alt="">
             </div>
         </div>
     </div>
@@ -141,6 +169,32 @@
                 }, 2000)
             })
         })
+
+
+    // let displacement = document.getElementById('displacement');
+    // let turbulence = document.getElementById('turbulence');
+  
+    // let PowerA = Power1;
+    // let PowerB = Power2;
+    // let PowerC = Power3;
+  
+    // let tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+  
+    // tl
+    // .fromTo( displacement, 0.9, {attr:{ scale:0 }}, {attr:{ scale:0 }, ease:PowerA.easeOut})
+    // //init pause
+    // .fromTo( displacement, 0.6, {attr:{ scale:0 }}, {attr:{ scale:150 }, ease:PowerA.easeOut})
+    // .fromTo( displacement, 0.6, {attr:{ scale:150 }}, {attr:{ scale:-20 }, ease:PowerA.easeIn} )
+    // .fromTo( displacement, 0.6, {attr:{ scale:-20 }}, {attr:{ scale:-120}, ease:PowerA.easeOut} )
+    // .fromTo( displacement, 0.6, {attr:{ scale:-120 }}, {attr:{ scale:30 }, ease:PowerA.easeIn} )
+  
+    // .fromTo( displacement, 0.6, {attr:{ scale:30 }}, {attr:{ scale:-65 }, ease:PowerC.easeInOut} )
+    // .fromTo( displacement, 3.2, {attr:{ scale:-65 }}, {attr:{ scale:1000 }, ease:PowerA.easeOut} )
+    // .fromTo( displacement, 0.6, {attr:{ scale:1000 }}, {attr:{ scale:-80 }, ease:PowerB.easeInOut} )
+    // .fromTo( displacement, 1.2, {attr:{ scale:-80 }}, {attr:{ scale:260 }, ease:PowerC.easeInOut} )
+    // .fromTo( turbulence, 0.45,{attr:{ baseFrequency:"0.025 0.0033" }}, {attr:{ baseFrequency:"0.0025 0.067" }, ease:PowerA.easeIn} )
+    
+    // .fromTo( displacement, 0.9, {attr:{ scale:260 }}, {attr:{ scale:0 }, ease:PowerC.easeInOut}, "-=0.4")
     </script>
 </body>
 </html>
